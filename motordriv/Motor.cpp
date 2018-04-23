@@ -24,7 +24,7 @@ void Motor::setSpeed(){
 void Motor::getSpeed(){
  I2C_writeAnything(Speed);
 }
-int Motor::getId(){
+byte Motor::getId(){
   return Id;
 }
 String Motor::getType(){
