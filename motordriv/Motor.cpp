@@ -3,9 +3,8 @@
 #include "Arduino.h"
 #include <I2C_Anything.h>
 Motor::Motor(){
-} 
+}
 void Motor::setWire(){
-   byte Id = Motor::getId();
    Wire.begin(Id);
 }
 
@@ -20,16 +19,16 @@ void Motor::setSpeed(){
   int x = Speed;
   I2C_readAnything(x);
   Speed = x;
-  
+
 }
 void Motor::getSpeed(){
- I2C_writeAnything(Speed); 
+ I2C_writeAnything(Speed);
 }
 int Motor::getId(){
   return Id;
 }
 String Motor::getType(){
-   
+
   return Type;
   }
 void Motor::printOut(){

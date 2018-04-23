@@ -4,7 +4,7 @@
 #include <I2C_Anything.h>
 void setup(){
   Wire.begin();
-  Serial.begin(9600);  
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -17,7 +17,7 @@ void loop() {
     int humi;
     I2C_readAnything(humi);
     Serial.print(humi);
-    Serial.println("fugt nivaue");
+    Serial.println("mouister level");
   }
 
   while(Serial.available()){

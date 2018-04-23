@@ -6,11 +6,10 @@
 #include <I2C_Anything.h>
 
 Temp::Temp(){
- 
-   
+
+
 }
 void Temp::setWire(){
-   byte Id = Temp::getId();
    Wire.begin(Id);
 }
 int Temp::getTemp(){
@@ -29,7 +28,7 @@ String Temp::getType(){
 
 void  Temp::setTempHumi(){
  int chk = DHT.read11(tempPin);
- Temp = DHT.temperature;  
+ Temp = DHT.temperature;
  Humi = DHT.humidity ;
  Serial.print(Humi);
  Serial.println("fugt");
@@ -40,12 +39,12 @@ void  Temp::setTempHumi(){
 
 void Temp::requestEvent()
 {
-    
+
     int tmp = Temp::getTemp();
-    I2C_writeAnything(tmp); 
+    I2C_writeAnything(tmp);
     int hm = Temp::getHumi();
     I2C_writeAnything(hm);
-    
+
 }
 
 
