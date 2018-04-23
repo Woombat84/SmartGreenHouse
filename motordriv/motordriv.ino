@@ -6,7 +6,6 @@
 Motor motor;
 
 void setup() {
-//Wire.begin(3);  // put your setup code here, to run once:
 motor.setWire();
 motor.pinSet();
 Wire.onRequest(requestEvent); 
