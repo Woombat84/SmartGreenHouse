@@ -9,7 +9,7 @@
 class Motor {
   public:
       Motor();
-      void setSpeed();           // Prototyping function.
+      void setSpeed();           // Prototyping member function.
       void getSpeed();
       int getId();
       String getType();
@@ -18,15 +18,15 @@ class Motor {
       void outPut();
       void setWire();
   protected:
-      const int Id = 0021;            // Id of the part.
-      const String Type = "Fan";    // Type of Component.
-      const int maxRange = 255;
-      const int minRange = 10;
+      const byte Id = 0021;            // Id of the part.
+      const String Type = "Fan";       // Type of Component.
+      const int maxRange = 255;        // Max Output  
+      const int minRange = 0;          // Min Output
        
   private:
-      int pinPwm = 11 ;
-      int Speed = 0; 
-      bool connected = false;
+      int pinPwm = 11 ;                //Output pin
+      int Speed = 0;                   //Holds the output speed of the fan 
+      
   };
 
 #endif 
