@@ -49,9 +49,9 @@ void Temp::requestEvent()
 
 
 void Temp::printOut(){
-int Id  = Temp::getId();
+
 Serial.println(Id);
-String Type = Temp::getType();
+
 Serial.println(Type);
 delay(2000);
 }

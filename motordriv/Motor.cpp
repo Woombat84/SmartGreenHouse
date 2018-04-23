@@ -32,9 +32,9 @@ String Motor::getType(){
   return Type;
   }
 void Motor::printOut(){
-int Id  = Motor::getId();
+
 Serial.println(Id);
-String Type = Motor::getType();
+
 Serial.println(Type);
 delay(2000);
 }
