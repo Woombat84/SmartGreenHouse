@@ -7,17 +7,20 @@
 
 Temp::Temp(){
 
-
 }
+
 void Temp::setWire(){
    Wire.begin(Id);
 }
+
 int Temp::getTemp(){
   return Temp;
 }
+
 int Temp::getHumi(){
   return Humi;
 }
+
 byte Temp::getId(){
   return Id;
 }
@@ -39,19 +42,14 @@ void  Temp::setTempHumi(){
 
 void Temp::requestEvent()
 {
-
     int tmp = Temp::getTemp();
     I2C_writeAnything(tmp);
     int hm = Temp::getHumi();
     I2C_writeAnything(hm);
-
 }
 
-
 void Temp::printOut(){
-
 Serial.println(Id);
-
 Serial.println(Type);
 delay(2000);
 }
