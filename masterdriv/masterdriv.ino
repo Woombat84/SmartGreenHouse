@@ -1,12 +1,16 @@
-#include <Wire.h>
-#include <I2C_Anything.h>
-void setup(){
-  Wire.begin();
-  Serial.begin(9600);
+ #include <Wire.h>
+ #include <I2C_Anything.h>
+
+ const byte Fan = 2;
+ const byte TempHumi = 21;
+ void setup(){
+     Wire.begin();
+     Serial.begin(9600);
+    
 }
 
 void loop() {
-  Wire.requestFrom(4,4);
+  Wire.requestFrom(TempHumi,4);
   while (Wire.available()){
     int temp;
     I2C_readAnything(temp);
@@ -22,7 +26,7 @@ void loop() {
   int x;
   x = Serial.parseInt();
   int junk = Serial.read();
-  Wire.beginTransmission(21);
+  Wire.beginTransmission(Fan);
   I2C_writeAnything(x) ;
   Wire.endTransmission();
   }
