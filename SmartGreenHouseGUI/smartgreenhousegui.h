@@ -2,7 +2,7 @@
 #define SMARTGREENHOUSEGUI_H
 
 #include <QMainWindow>
-
+#include <QSerialPort>
 namespace Ui {
 class SmartGreenHouseGUI;
 }
