@@ -1,6 +1,6 @@
 #include <I2C_Anything.h>
 #include <TinyWire.h>
-#include "TinyWMotor.h"
+#include "TinyMotor.h"
 
 
 TinyWires::TinyWires()

@@ -7,8 +7,6 @@ class TinyWires
     public:
         TinyWires();
       void setSpeed();
-      void getSpeed();
-      void speeed();
       byte getId();
       void pinSet();
       void outPut();
@@ -16,14 +14,10 @@ class TinyWires
 
 
     protected:
-      const byte Id = 0021;            // Id of the part.
-      const String Type = "Motor";       // Type of Component.
-      const int maxRange = 255;        // Max Output
-      const int minRange = 0;
+
 
     private:
-      int pinPwm = 11 ;                //Output pin
-      int Speed = 0;                   //Holds the output speed of the fan
+                       //Holds the output speed of the fan
 
 };
 
