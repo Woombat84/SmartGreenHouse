@@ -1,24 +1,24 @@
-#ifndef TINYWIRES_H
-#define TINYWIRES_H
-#include "Arduino.h"
+#ifndef TINYMOTOR_H mo
+#define TINYMOTOR_H mo
+#include <Arduino.h>
 
-class TinyWires
+class TinyMotor
 {
     public:
-        TinyWires();
+      TinyMotor();
       void setSpeed();
       byte getId();
       void pinSet();
       void outPut();
-      void setWire();
+      int setWire();
 
 
     protected:
 
 
     private:
-                       //Holds the output speed of the fan
+     const byte Id= 21;                  //Holds the output speed of the fan
 
 };
 
-#endif // TINYWIRES_H
+#endif // TINYMOTOR_H

@@ -5,7 +5,7 @@
 TinyMotor motor;
 
 int speeed =0;
-const byte Id= 21;
+
 
 void setup() {
 	// config led_pin as Output for driving an LED

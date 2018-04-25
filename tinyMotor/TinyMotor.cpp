@@ -1,13 +1,13 @@
 #include <I2C_Anything.h>
 #include <TinyWire.h>
-#include "TinyWMotor.h"
+#include "TinyMotor.h"
+#include <Arduino.h>
 
-
-TinyWires::TinyWires()
+TinyMotor::TinyMotor()
 {
 #define pinPwm 1
 }
 
-TinyWire::setWire(){
+TinyMotor::setWire(){
   TinyWire.begin(Id);
 }
