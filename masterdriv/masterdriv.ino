@@ -22,10 +22,8 @@ void loop() {
     int junk = Serial.read();
     int i=0;
     while (t == 't' ) {
-      
       if(i==2){t='e';Serial.println("Failed Temperature sensor");}
-      i =i+1;
-      
+      i =i+1;      
       Wire.requestFrom(TempHumi, 2);
       Serial.println("temperatur");
       while (Wire.available()) {
