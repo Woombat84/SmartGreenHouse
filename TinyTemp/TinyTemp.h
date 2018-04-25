@@ -14,8 +14,4 @@ class TinyTemp
 
 }
 
-
-
-
-
 #endif // TINYTEMP_H
