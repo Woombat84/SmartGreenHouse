@@ -17,7 +17,7 @@ class TinyMotor
 
 
     private:
-     const byte Id= 21;                  //Holds the output speed of the fan
+     uint8_t Id= 21;                  //Holds the output speed of the fan
 
 };
 

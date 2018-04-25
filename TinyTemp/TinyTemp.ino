@@ -8,13 +8,14 @@
 
 dht DHT;
 
-byte id = 2;
+uint8_t Id = 2;
 int Temp = 0;
 int Humi = 0;
+
 void setup() {
   // put your setup code here, to run once:
 
-TinyWire.begin(id);
+TinyWire.begin(Id);
 TinyWire.onRequest(request);
 
 }
@@ -27,7 +28,8 @@ int chk = DHT.read11(tempPin);
 delay (1000);
 }
 void request(){
-
   TinyWire.send(Temp);
+  
   TinyWire.send(Humi);
+
 }
