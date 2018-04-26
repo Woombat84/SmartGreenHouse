@@ -1,6 +1,7 @@
 #include "masterdriv.h"
 #include <Wire.h>
 #include <I2C_Anything.h>
+#include "Arduino.h"
 
 masterdriv::masterdriv()
 {
@@ -8,11 +9,10 @@ masterdriv::masterdriv()
 }
 void masterdriv::serialAvaivable(){
       while (Serial.available()){
-      Serial.println("start");
-        char t = 'o';
+        Serial.println("start");       
         t = Serial.read();
         int junk = Serial.read();
-        int i=0;
+        
       while (t == 't' ){
             masterdriv::tEqualsT();
       }
@@ -22,6 +22,7 @@ void masterdriv::serialAvaivable(){
     }
 
     void masterdriv::tEqualsT(){
+        i=0;
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
