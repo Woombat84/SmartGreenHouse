@@ -1,6 +1,6 @@
 #include <Wire.h>
 #include "masterdriv.h"
-#include <I2C_Anything.h>
+#include "I2C_Anything.h"
 
 
 void setup() {
@@ -14,11 +14,6 @@ void loop() {
   serialAvaivable();
   tEqualsT();
   WireAvaivable();
-      }
-    {
   tEqualsF();
-        }
-        {
-    t = 'm';
+  t = 'm';
   }
-

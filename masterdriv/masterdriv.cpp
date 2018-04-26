@@ -1,12 +1,14 @@
+#include <Wire.h>
+
 #include "masterdriv.h"
 #include <Wire.h>
-#include <I2C_Anything.h>
+#include "I2C_Anything.h"
 
 masterdriv::masterdriv()
 {
 
 }
-masterdriv::serialAvaivable();{
+masterdriv::serialAvaivable() {
       while (Serial.available()){
       Serial.println("start");
         char t = 'o';
@@ -21,14 +23,16 @@ masterdriv::serialAvaivable();{
       }         
     }
 
-    masterdriv::tEqualsT(){
+
+    masterdriv::tEqualsT(); {
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
         Serial.println("temperatur");
+            masterdriv::WireAvaivable();
     }
     }
-    masterdriv::WireAvaivable(){
+    masterdriv::WireAvaivable() {
       while (Wire.available()) {
         I2C_readAnything(temp);
         Serial.print(temp);
@@ -57,6 +61,6 @@ masterdriv::serialAvaivable();{
             }
           }
         }
-      }
+      
  
 
