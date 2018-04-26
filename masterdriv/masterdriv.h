@@ -21,11 +21,11 @@ class masterdriv
 
     uint8_t Fan = 21;
     uint8_t TempHumi = 2;
-    uint8_t x;
-    uint8_t t;
-    uint8_t i;
-    uint8_t temp;
-    uint8_t humi;
+    int  x =0;
+    char t='c';
+    int  i =0 ;
+    int  temp;
+    int  humi;
 };
 
 #endif
