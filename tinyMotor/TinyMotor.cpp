@@ -1,5 +1,4 @@
-
-#include <TinyWire.h>
+#include <TinyWireS.h>
 #include "TinyMotor.h"
 #include <Arduino.h>
 
@@ -8,19 +7,20 @@ TinyMotor::TinyMotor() //prefix::functionen
 #define pinPwm 1
 }
 
-TinyMotor::setWire(){
-  TinyWire.begin(Id);
+ int TinyMotor::setWire(){
+     TinyWireS.begin(Id);
 }
 
-  TinyMotor::pinSet(){
+void  TinyMotor::pinSet(){
     pinMode(pinPwm, OUTPUT);
 }
-  TinyMotor::setSpeed(){
-    while(TinyWire.available()>0){
-  		s = TinyWire.read();
+ void TinyMotor::setSpeed(){
+    while(TinyWireS.available()>0){
+  		s = TinyWireS.receive();
         if(s>=255){s=255;}
       speeed = s;
   }
-  TinyMotor::outPut(){
+ }
+  void TinyMotor::outPut(){
     analogWrite(pinPwm, speeed);
   }

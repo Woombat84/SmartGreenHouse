@@ -1,5 +1,4 @@
-
-#include <TinyWire.h>
+#include <TinyWireS.h>
 #include "TinyMotor.h"
 
 TinyMotor motor;
@@ -8,7 +7,7 @@ void setup() {
 
 	motor.setWire();
 	motor.pinSet();
-	TinyWire.onReceive(Receive);
+	TinyWireS.receive();
 }
 
 void loop() {
@@ -18,4 +17,3 @@ void loop() {
 void Receive(){
 	motor.setSpeed();
 	}
-}
