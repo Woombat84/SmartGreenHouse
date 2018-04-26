@@ -10,10 +10,17 @@ class TinyTemp
 {
   public:
     TinyTemp();
+    void setWire();
+    void setTemp();
+    void request();
+    dht DHT;
+
   protected:
 
   private:
-
+    uint8_t Id = 2;
+    int Temp = 0;
+    int Humi = 0;
 
 
 };

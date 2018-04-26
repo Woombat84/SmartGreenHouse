@@ -7,7 +7,6 @@ class TinyMotor
     public:
       TinyMotor();
       void setSpeed();
-      byte getId();
       void pinSet();
       void outPut();
       int setWire();
@@ -17,7 +16,9 @@ class TinyMotor
 
 
     private:
-     uint8_t Id= 21;                  //Holds the output speed of the fan
+     uint8_t Id= 21;
+     uint8_t speeed = 0;
+     uint8_t  s;                  //Holds the output speed of the fan
 
 };
 
