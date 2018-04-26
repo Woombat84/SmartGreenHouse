@@ -11,7 +11,7 @@ class masterdriv
         void serialAvaivable();
         void WireAvaivable();
         void tEqualsF();
-        int tEqualsT();
+        void tEqualsT();
 
 
 
