@@ -26,6 +26,7 @@ masterdriv::serialAvaivable();{
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
         Serial.println("temperatur");
+            masterdriv::WireAvaivable();
     }
     }
     masterdriv::WireAvaivable(){
