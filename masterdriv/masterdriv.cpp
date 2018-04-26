@@ -13,11 +13,15 @@ masterdriv::serialAvaivable();{
         t = Serial.read();
         int junk = Serial.read();
         int i=0;
-        }
+      while (t == 't' ){
+            masterdriv::tEqualsT();
+      }
+      while (t == 'f') {
+            masterdriv::tEqualsF();
+      }         
     }
 
     masterdriv::tEqualsT(){
-      while (t == 't' ){
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
@@ -37,8 +41,7 @@ masterdriv::serialAvaivable();{
         Serial.println("done");
         }
     }  
-    masterdriv::tEqualsF();{
-      while (t == 'f') {
+    masterdriv::tEqualsF(){
         Serial.print("Enter speed:");
         delay(3000);
         if (Serial.available() > -1) {
