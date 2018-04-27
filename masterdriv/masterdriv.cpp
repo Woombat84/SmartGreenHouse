@@ -1,5 +1,4 @@
 #include <Wire.h>
-
 #include "masterdriv.h"
 #include <Wire.h>
 #include "I2C_Anything.h"
@@ -20,11 +19,11 @@ masterdriv::serialAvaivable() {
       }
       while (t == 'f') {
             masterdriv::tEqualsF();
-      }         
+      }
     }
 
 
-    masterdriv::tEqualsT(); {
+    masterdriv::tEqualsT() {
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
@@ -44,7 +43,7 @@ masterdriv::serialAvaivable() {
         t = 'm';
         Serial.println("done");
         }
-    }  
+    }
     masterdriv::tEqualsF(){
         Serial.print("Enter speed:");
         delay(3000);
@@ -61,6 +60,3 @@ masterdriv::serialAvaivable() {
             }
           }
         }
-      
- 
-
