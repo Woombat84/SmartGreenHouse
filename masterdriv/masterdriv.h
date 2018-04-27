@@ -1,7 +1,12 @@
-#ifndef MASTERDRIV_H
-#define MASTERDRIV_H
+#ifndef MASTERDRIV_H Ma
+#define MASTERDRIV_H Ma
+#if (ARDUINO >=100)
+  #include "Arduino.h"
+#else
+  #include"WProgram.h"
+#endif
 #include <Wire.h>
-#include "I2C_Anything.h"
+#include "masterdriv.h"
 
 
 
@@ -9,9 +14,9 @@ class masterdriv
 {
     public:
         masterdriv();
-        int serialAvaivable();
-        int WireAvaivable();
-        int tEqualsF();
+        void serialAvaivable();
+        void WireAvaivable();
+        void tEqualsF();
         int tEqualsT();
 
 

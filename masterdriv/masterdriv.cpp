@@ -1,13 +1,13 @@
-#include <Wire.h>
 #include "masterdriv.h"
 #include <Wire.h>
-#include "I2C_Anything.h"
+#include <I2C_Anything.h>
+#include "Arduino.h"
 
 masterdriv::masterdriv()
 {
 
 }
-masterdriv::serialAvaivable() {
+void masterdriv::serialAvaivable() {
       while (Serial.available()){
       Serial.println("start");
         char t = 'o';
@@ -22,7 +22,8 @@ masterdriv::serialAvaivable() {
       }
     }
 }
-        masterdriv::tEqualsT() {
+    int masterdriv::tEqualsT() {
+>>>>>>> 4d38d38f2de5021cb1ad0513681d54633064c4cc
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
@@ -30,7 +31,7 @@ masterdriv::serialAvaivable() {
             masterdriv::WireAvaivable();
     }
 
-    masterdriv::WireAvaivable() {
+  void  masterdriv::WireAvaivable() {
       while (Wire.available()) {
         I2C_readAnything(temp);
         Serial.print(temp);
@@ -43,7 +44,7 @@ masterdriv::serialAvaivable() {
         Serial.println("done");
         }
     }
-    masterdriv::tEqualsF(){
+  void  masterdriv::tEqualsF(){
         Serial.print("Enter speed:");
         delay(3000);
         if (Serial.available() > -1) {
