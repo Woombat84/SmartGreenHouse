@@ -4,7 +4,9 @@
 
 masterdriv::masterdriv()
 {
-    masterdriv::serialAvaivable();{
+    
+}
+masterdriv::serialAvaivable(){
       while (Serial.available()){
       Serial.println("start");
         char t = 'o';
@@ -13,15 +15,15 @@ masterdriv::masterdriv()
         int i=0;
     }
     }
-
-    masterdriv::tEqualsT();{
+masterdriv::tEqualsT(){
       while (t == 't' ) {
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
         Serial.println("temperatur");
     }
-    masterdriv::WireAvaivable();{
+    }    
+masterdriv::WireAvaivable(){
       while (Wire.available()) {
         I2C_readAnything(temp);
         Serial.print(temp);
@@ -33,7 +35,8 @@ masterdriv::masterdriv()
         t = 'm';
         Serial.println("done");
     }
-    masterdriv::tEqualsF();{
+    }
+masterdriv::tEqualsF(){
       while (t == 'f') {
         Serial.print("Enter speed:");
         delay(3000);
@@ -47,10 +50,10 @@ masterdriv::masterdriv()
             delay(100);
             t = 'm';
             Serial.println("done");
-       }
-      }
+       } 
      }
     }
    }
-  }
- }
+
+  
+ 
