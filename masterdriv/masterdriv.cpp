@@ -21,6 +21,7 @@ masterdriv::serialAvaivable() {
             masterdriv::tEqualsF();
       }
     }
+}
 
 
     masterdriv::tEqualsT() {
@@ -30,7 +31,7 @@ masterdriv::serialAvaivable() {
         Serial.println("temperatur");
             masterdriv::WireAvaivable();
     }
-    }
+    
     masterdriv::WireAvaivable() {
       while (Wire.available()) {
         I2C_readAnything(temp);

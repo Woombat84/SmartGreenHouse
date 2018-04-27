@@ -9,10 +9,10 @@ class masterdriv
 {
     public:
         masterdriv();
-        void serialAvaivable();
-        void WireAvaivable();
-        void tEqualsF();
-        void tEqualsT();
+        int serialAvaivable();
+        int WireAvaivable();
+        int tEqualsF();
+        int tEqualsT();
 
 
 
