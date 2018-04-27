@@ -23,15 +23,14 @@ masterdriv::serialAvaivable() {
     }
 }
 
-
-    masterdriv::tEqualsT() {
+        masterdriv::tEqualsT() {
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
         Serial.println("temperatur");
             masterdriv::WireAvaivable();
     }
-    
+
     masterdriv::WireAvaivable() {
       while (Wire.available()) {
         I2C_readAnything(temp);
