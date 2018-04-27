@@ -22,7 +22,11 @@ masterdriv::serialAvaivable() {
       }
     }
 }
+<<<<<<< HEAD
         masterdriv::tEqualsT() {
+=======
+
+>>>>>>> 3983e95bee476175ac578e34f4a251f128df323f
         if(i==2){t='e';Serial.println("Failed Temperature sensor");}
         i =i+1;
         Wire.requestFrom(TempHumi, 2);
