@@ -23,7 +23,7 @@ private slots:
     void updateHumiLCD(const QString);
     void updateTempLCD(const QString);
     int  combine(int,int);
-    void on_fanSpeed_valueChanged(int value);
+    void onfanSpeedvalueChanged(int value);
     void setDisplays();
     void on_humiSpin20_valueChanged(int arg1);
 
@@ -44,6 +44,8 @@ private slots:
     void on_tempSpin80_valueChanged(int arg1);
 
     void on_tempSpin100_valueChanged(int arg1);
+
+    void on_checkBox_toggled(bool checked);
 
 private:
     Ui::SmartGreenHouseGUI *ui;
@@ -67,6 +69,7 @@ private:
     int thresholdTemp60=24;
     int thresholdTemp80=26;
     int thresholdTemp100=28;
+    bool onHumi=false;
 };
 
 #endif // SMARTGREENHOUSEGUI_H
