@@ -6,77 +6,256 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>411</width>
-    <height>182</height>
+    <width>943</width>
+    <height>241</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>SmartGreenHouseGUI</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>361</width>
-      <height>101</height>
+      <x>10</x>
+      <y>0</y>
+      <width>181</width>
+      <height>141</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QVBoxLayout" name="verticalLayout_3">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Monitoring of Smart Green House</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Temperature</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Temperature</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="tempLcdNumber">
+           <property name="digitCount">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLCDNumber" name="tempLcdNumber">
-         <property name="digitCount">
-          <number>3</number>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Humidity</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="humiLcdNumber_2">
+           <property name="digitCount">
+            <number>3</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Fan speed</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QProgressBar" name="fanSpeed">
+           <property name="value">
+            <number>24</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>284</x>
+      <y>10</y>
+      <width>631</width>
+      <height>156</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Thresholds settings for fan</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label_2">
-         <property name="text">
-          <string>Humidity</string>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>FanSpeed @ 20%</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="text">
+            <string>FanSpeed @ 40%</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>FanSpeed @ 60%</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>FanSpeed @ 80%</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="text">
+            <string>FanSpeed @ 100%</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
-        <widget class="QLCDNumber" name="humiLcdNumber_2">
-         <property name="digitCount">
-          <number>3</number>
-         </property>
-        </widget>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QSpinBox" name="tempSpin20"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="tempSpin40"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="tempSpin60"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="tempSpin80"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="tempSpin100"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLCDNumber" name="tempLcdDis20"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="tempLcdDis40"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="tempLcdDis60"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="tempLcdDis80"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="tempLcdDis100"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QSpinBox" name="humiSpin20">
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="humiSpin40"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="humiSpin60"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="humiSpin80"/>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="humiSpin100"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLCDNumber" name="humiLcdDis20"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="humiLcdDis40"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="humiLcdDis60"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="humiLcdDis80"/>
+         </item>
+         <item>
+          <widget class="QLCDNumber" name="humiLcdDis100"/>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>50</y>
+      <width>64</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_3">
-       <item>
-        <widget class="QLabel" name="label_3">
-         <property name="text">
-          <string>Fan speed</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QProgressBar" name="fanSpeed">
-         <property name="value">
-          <number>24</number>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Temperature</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Humidity</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -86,7 +265,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>411</width>
+     <width>943</width>
      <height>21</height>
     </rect>
    </property>
@@ -103,5 +282,22 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>humiSpin20</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>humiLcdDis20</receiver>
+   <slot>display(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>157</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>371</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

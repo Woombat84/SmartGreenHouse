@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_SmartGreenHouseGUI_t {
-    QByteArrayData data[10];
-    char stringdata0[119];
+    QByteArrayData data[22];
+    char stringdata0[408];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,13 +40,34 @@ QT_MOC_LITERAL(5, 52, 13), // "updateHumiLCD"
 QT_MOC_LITERAL(6, 66, 13), // "updateTempLCD"
 QT_MOC_LITERAL(7, 80, 7), // "combine"
 QT_MOC_LITERAL(8, 88, 24), // "on_fanSpeed_valueChanged"
-QT_MOC_LITERAL(9, 113, 5) // "value"
+QT_MOC_LITERAL(9, 113, 5), // "value"
+QT_MOC_LITERAL(10, 119, 11), // "setDisplays"
+QT_MOC_LITERAL(11, 131, 26), // "on_humiSpin20_valueChanged"
+QT_MOC_LITERAL(12, 158, 4), // "arg1"
+QT_MOC_LITERAL(13, 163, 26), // "on_humiSpin40_valueChanged"
+QT_MOC_LITERAL(14, 190, 26), // "on_humiSpin60_valueChanged"
+QT_MOC_LITERAL(15, 217, 26), // "on_humiSpin80_valueChanged"
+QT_MOC_LITERAL(16, 244, 27), // "on_humiSpin100_valueChanged"
+QT_MOC_LITERAL(17, 272, 26), // "on_tempSpin20_valueChanged"
+QT_MOC_LITERAL(18, 299, 26), // "on_tempSpin40_valueChanged"
+QT_MOC_LITERAL(19, 326, 26), // "on_tempSpin60_valueChanged"
+QT_MOC_LITERAL(20, 353, 26), // "on_tempSpin80_valueChanged"
+QT_MOC_LITERAL(21, 380, 27) // "on_tempSpin100_valueChanged"
 
     },
     "SmartGreenHouseGUI\0serialRead\0\0"
     "setFanSpeed\0callTemp\0updateHumiLCD\0"
     "updateTempLCD\0combine\0on_fanSpeed_valueChanged\0"
-    "value"
+    "value\0setDisplays\0on_humiSpin20_valueChanged\0"
+    "arg1\0on_humiSpin40_valueChanged\0"
+    "on_humiSpin60_valueChanged\0"
+    "on_humiSpin80_valueChanged\0"
+    "on_humiSpin100_valueChanged\0"
+    "on_tempSpin20_valueChanged\0"
+    "on_tempSpin40_valueChanged\0"
+    "on_tempSpin60_valueChanged\0"
+    "on_tempSpin80_valueChanged\0"
+    "on_tempSpin100_valueChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -56,7 +77,7 @@ static const uint qt_meta_data_SmartGreenHouseGUI[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -64,13 +85,24 @@ static const uint qt_meta_data_SmartGreenHouseGUI[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x0a /* Public */,
-       3,    0,   50,    2, 0x08 /* Private */,
-       4,    0,   51,    2, 0x08 /* Private */,
-       5,    1,   52,    2, 0x08 /* Private */,
-       6,    1,   55,    2, 0x08 /* Private */,
-       7,    2,   58,    2, 0x08 /* Private */,
-       8,    1,   63,    2, 0x08 /* Private */,
+       1,    0,  104,    2, 0x0a /* Public */,
+       3,    0,  105,    2, 0x08 /* Private */,
+       4,    0,  106,    2, 0x08 /* Private */,
+       5,    1,  107,    2, 0x08 /* Private */,
+       6,    1,  110,    2, 0x08 /* Private */,
+       7,    2,  113,    2, 0x08 /* Private */,
+       8,    1,  118,    2, 0x08 /* Private */,
+      10,    0,  121,    2, 0x08 /* Private */,
+      11,    1,  122,    2, 0x08 /* Private */,
+      13,    1,  125,    2, 0x08 /* Private */,
+      14,    1,  128,    2, 0x08 /* Private */,
+      15,    1,  131,    2, 0x08 /* Private */,
+      16,    1,  134,    2, 0x08 /* Private */,
+      17,    1,  137,    2, 0x08 /* Private */,
+      18,    1,  140,    2, 0x08 /* Private */,
+      19,    1,  143,    2, 0x08 /* Private */,
+      20,    1,  146,    2, 0x08 /* Private */,
+      21,    1,  149,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -80,6 +112,17 @@ static const uint qt_meta_data_SmartGreenHouseGUI[] = {
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int,    9,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
+    QMetaType::Void, QMetaType::Int,   12,
 
        0        // eod
 };
@@ -98,6 +141,17 @@ void SmartGreenHouseGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 5: { int _r = _t->combine((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         case 6: _t->on_fanSpeed_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->setDisplays(); break;
+        case 8: _t->on_humiSpin20_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->on_humiSpin40_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->on_humiSpin60_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->on_humiSpin80_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->on_humiSpin100_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->on_tempSpin20_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->on_tempSpin40_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 15: _t->on_tempSpin60_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 16: _t->on_tempSpin80_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 17: _t->on_tempSpin100_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -128,13 +182,13 @@ int SmartGreenHouseGUI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 18;
     }
     return _id;
 }

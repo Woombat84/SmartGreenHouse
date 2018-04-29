@@ -17,7 +17,7 @@ class TinyMotor
 
     private:
      uint8_t Id= 21;
-     uint8_t speeed = 0;
+     int speeed = 0;
      uint8_t  s;                  //Holds the output speed of the fan
 
 };

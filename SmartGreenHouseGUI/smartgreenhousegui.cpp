@@ -90,23 +90,23 @@ void SmartGreenHouseGUI::setFanSpeed(){
     if(Serial->isWritable()){
         Serial->write("f");
 
-        if(humi < 20 || temp < 10){
+        if(humi > thresholdHumi20 || temp > thresholdTemp20 ){
             Serial->write("52");
             speed = 20;
         }
-        if(humi < 30 || temp < 15){
+        if(humi > thresholdHumi40  || temp > thresholdTemp40){
             Serial->write("77");
-            speed = 30;
+            speed = 40;
         }
-        if(humi < 50 || temp < 17){
+        if(humi > thresholdHumi60 || temp > thresholdTemp60){
             Serial->write("112");
-            speed = 50;
+            speed = 60;
         }
-        if(humi < 60 || temp < 19){
+        if(humi > thresholdHumi80 || temp > thresholdTemp80){
             Serial->write("200");
-            speed = 70;
+            speed = 80;
         }
-        if(humi < 80 || temp < 21){
+        if(humi > thresholdHumi100 || temp > thresholdTemp100){
             Serial->write("255");
             speed = 100;
         }
@@ -116,6 +116,7 @@ void SmartGreenHouseGUI::setFanSpeed(){
 
         }
         SmartGreenHouseGUI::on_fanSpeed_valueChanged(speed);
+        SmartGreenHouseGUI::setDisplays();
     }
     else{
         QMessageBox::warning(this, "cannot write to arduino","sad");
@@ -132,7 +133,7 @@ void SmartGreenHouseGUI::serialRead(){
        serialData = Serial->readAll();
        serialBuffer += QString::fromStdString(serialData.toStdString());
    }else{
-       qDebug() << bufferSplit;
+       //qDebug() << bufferSplit;
        SmartGreenHouseGUI::updateTempLCD(bufferSplit[1]);
        SmartGreenHouseGUI::updateHumiLCD(bufferSplit[2]);
        serialBuffer = "";
@@ -140,11 +141,11 @@ void SmartGreenHouseGUI::serialRead(){
        int temp1 = bufferSplit[1].at(1).digitValue();
        int humi0 = bufferSplit[2].at(0).digitValue();
        int humi1 = bufferSplit[2].at(1).digitValue();
-       qDebug() << temp0 <<temp1;
+       //qDebug() << temp0 <<temp1;
        temp = SmartGreenHouseGUI::combine(temp0,temp1);
-       qDebug() << temp;
+       //qDebug() << temp;
        humi = SmartGreenHouseGUI::combine(humi0,humi1);
-       qDebug() << humi;
+       //qDebug() << humi;
        SmartGreenHouseGUI::setFanSpeed();
    }
 }
@@ -171,4 +172,67 @@ int SmartGreenHouseGUI::combine(int a, int b){
 void SmartGreenHouseGUI::on_fanSpeed_valueChanged(int value)
 {
     ui->fanSpeed->setValue(value);
+}
+
+void SmartGreenHouseGUI::setDisplays(){
+    ui->humiLcdDis20->display(thresholdHumi20);
+    ui->humiLcdDis40->display(thresholdHumi40);
+    ui->humiLcdDis60->display(thresholdHumi60);
+    ui->humiLcdDis80->display(thresholdHumi80);
+    ui->humiLcdDis100->display(thresholdHumi100);
+    ui->tempLcdDis20->display(thresholdTemp20);
+    ui->tempLcdDis40->display(thresholdTemp40);
+    ui->tempLcdDis60->display(thresholdTemp60);
+    ui->tempLcdDis80->display(thresholdTemp80);
+    ui->tempLcdDis100->display(thresholdTemp100);
+}
+
+void SmartGreenHouseGUI::on_humiSpin20_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_humiSpin40_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_humiSpin60_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_humiSpin80_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_humiSpin100_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_tempSpin20_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_tempSpin40_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_tempSpin60_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_tempSpin80_valueChanged(int arg1)
+{
+
+}
+
+void SmartGreenHouseGUI::on_tempSpin100_valueChanged(int arg1)
+{
+
 }
