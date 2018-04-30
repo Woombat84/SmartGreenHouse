@@ -52,16 +52,14 @@ void masterdriv::serialAvaivable(){
         delay(3000);
         if (Serial.available() > -1) {
           x = Serial.parseInt();
-          if (Serial.read() == '\n') {
             Wire.beginTransmission(Fan);
-            I2C_writeAnything(x);
+            Wire.write(x);
             Wire.endTransmission();
             //Serial.println(x);
             delay(100);
             t = 'm';
             //Serial.println("done");
             }
-          }
         }
 
   void masterdriv::setupBegin(){

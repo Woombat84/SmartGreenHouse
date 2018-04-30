@@ -30,7 +30,7 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
     if(arduinoisavailbel){
         //open and config port
         Serial->setPortName(arduino_mega_portName);
-        Serial->open(QIODevice::ReadWrite);
+        Serial->open(QSerialPort::ReadWrite);
         Serial->setBaudRate(QSerialPort::Baud9600);
         Serial->setDataBits(QSerialPort::Data8);
         Serial->setParity(QSerialPort::NoParity);
@@ -43,7 +43,8 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
         connect(timer2, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
         QObject::connect(Serial, SIGNAL(readyRead()), this, SLOT(serialRead()));
         timer->start(1000);
-        timer2->start(1054);
+        timer2->start(1000);
+
     }
     else{
         // warring arduino not availbel
@@ -87,75 +88,73 @@ void SmartGreenHouseGUI::setFanSpeed(){
         Serial->write("f");
         //qDebug() << "set fan speed";
         if(humi >= thresholdHumi20 &&humi < thresholdHumi40 && onHumi == true){
+            if(Serial->isWritable()){
             Serial->write("52");
             speed = 20;
-            Serial->clear();
             return;
-        }
+        }}
         if(humi >= thresholdHumi40 &&humi <thresholdHumi60 && onHumi == true){
+             if(Serial->isWritable()){
             Serial->write("77");
             speed = 40;
-            Serial->clear();
             return;
-        }
+        }}
         if(humi >= thresholdHumi60 &&humi <thresholdHumi80 && onHumi == true){
             Serial->write("112");
             speed = 60;
-            Serial->clear();
             return;
         }
         if(humi >= thresholdHumi80 && humi< thresholdHumi100 && onHumi == true){
             Serial->write("200");
             speed = 80;
-            Serial->clear();
             return;
         }
         if(humi >= thresholdHumi100 && onHumi == true){
             Serial->write("255");
             speed = 100;
-            Serial->clear();
             return;
         }
         if(onHumi == false && temp >= thresholdTemp20 && temp<thresholdTemp40){
             Serial->write("52");
             speed = 20;
-            Serial->clear();
+            //qDebug() << "20 "<<speed;
             return;
         }
         if(onHumi == false && temp >= thresholdTemp40 && temp<thresholdTemp60){
             Serial->write("77");
             speed = 40;
-            Serial->clear();
             return;
         }
         if(onHumi == false && temp >= thresholdTemp60 && temp<thresholdTemp80){
             Serial->write("112");
             speed = 60;
-            Serial->clear();
             return;
         }
         if(onHumi == false && temp >= thresholdTemp80 && temp < thresholdTemp100){
             Serial->write("200");
             speed = 80;
-            Serial->clear();
+            //Serial->clear();
             return;
         }
         if(onHumi == false && temp >= thresholdTemp100 ){
-            Serial->write("255");
+
             speed = 100;
-            Serial->clear();
+            Serial->write("255");
+            //Serial->clear();
             return;
         }
         else{
+
             Serial->write("0");
             speed = 0;
-            Serial->clear();
+            //Serial->clear();
             return;
         }
     }
     else{
         QMessageBox::warning(this, "cannot write to arduino","sad");
     }
+
     return;
 }
 
