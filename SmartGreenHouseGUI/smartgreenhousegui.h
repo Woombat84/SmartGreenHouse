@@ -70,6 +70,8 @@ private:
     int thresholdTemp80=26;
     int thresholdTemp100=28;
     bool onHumi=false;
+    const QString procent ="%";
+    const QString degrees ="C";
 };
 
 #endif // SMARTGREENHOUSEGUI_H

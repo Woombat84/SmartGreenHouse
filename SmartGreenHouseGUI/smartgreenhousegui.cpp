@@ -77,6 +77,7 @@ void SmartGreenHouseGUI::callTemp(){
     SmartGreenHouseGUI::onfanSpeedvalueChanged(speed);
     if(Serial->isWritable()){
         Serial->write("t");
+
         //qDebug() << "temperature call done";
 
     }
@@ -220,57 +221,137 @@ void SmartGreenHouseGUI::setDisplays(){
     ui->tempSpin60->setValue(thresholdTemp60);
     ui->tempSpin80->setValue(thresholdTemp80);
     ui->tempSpin100->setValue(thresholdTemp100);
+
 }
 
 void SmartGreenHouseGUI::on_humiSpin20_valueChanged(int arg1)
 {
     thresholdHumi20 = arg1;
     //qDebug()<<thresholdHumi20;
+    if(thresholdHumi20 >= thresholdHumi40 ){
+        thresholdHumi40 = thresholdHumi20+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_humiSpin40_valueChanged(int arg1)
 {
     thresholdHumi40 = arg1;
+    if(thresholdHumi20 >= thresholdHumi40 ){
+        thresholdHumi20 = thresholdHumi40-1;
+    }
+    if(thresholdHumi40 >= thresholdHumi60 ){
+        thresholdHumi60 = thresholdHumi40+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_humiSpin60_valueChanged(int arg1)
 {
     thresholdHumi60 = arg1;
+    if(thresholdHumi40 >= thresholdHumi60 ){
+        thresholdHumi40 = thresholdHumi60-1;
+    }
+    if(thresholdHumi60 >= thresholdHumi80 ){
+        thresholdHumi80 = thresholdHumi60+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_humiSpin80_valueChanged(int arg1)
 {
     thresholdHumi80 = arg1;
+    if(thresholdHumi60 >= thresholdHumi80 ){
+        thresholdHumi60 = thresholdHumi80-1;
+    }
+    if(thresholdHumi80 >= thresholdHumi100 ){
+        thresholdHumi100 = thresholdHumi80+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_humiSpin100_valueChanged(int arg1)
 {
     thresholdHumi100 = arg1;
+    if(thresholdHumi80 >= thresholdHumi100 ){
+        thresholdHumi80 = thresholdHumi100-1;
+    }
+    else{}
+
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_tempSpin20_valueChanged(int arg1)
 {
     thresholdTemp20 = arg1;
+    if(thresholdTemp20 >= thresholdTemp40 ){
+        thresholdTemp40 = thresholdTemp20+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+
 }
 
 void SmartGreenHouseGUI::on_tempSpin40_valueChanged(int arg1)
 {
     thresholdTemp40 = arg1;
+    if(thresholdTemp20 >= thresholdTemp40 ){
+        thresholdTemp20 = thresholdTemp40-1;
+    }
+    if(thresholdTemp40 >= thresholdTemp60 ){
+        thresholdTemp60 = thresholdTemp40+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_tempSpin60_valueChanged(int arg1)
 {
     thresholdTemp60 = arg1;
+    if(thresholdTemp40 >= thresholdTemp60 ){
+        thresholdTemp40 = thresholdTemp60-1;
+    }
+    if(thresholdTemp60 >= thresholdTemp80 ){
+        thresholdTemp80 = thresholdTemp60+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_tempSpin80_valueChanged(int arg1)
 {
     thresholdTemp80 = arg1;
+    if(thresholdHumi60 >= thresholdHumi80 ){
+        thresholdHumi60 = thresholdTemp80-1;
+    }
+    if(thresholdTemp80 >= thresholdTemp100 ){
+        thresholdTemp100 = thresholdTemp80+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_tempSpin100_valueChanged(int arg1)
 {
     thresholdTemp100 = arg1;
+
+    if(thresholdTemp80 >= thresholdTemp100 ){
+        thresholdTemp80 = thresholdTemp100-1;
+}
+    else{}
+    SmartGreenHouseGUI::setDisplays();
 }
 
 void SmartGreenHouseGUI::on_checkBox_toggled(bool checked)
