@@ -73,16 +73,16 @@ SmartGreenHouseGUI::~SmartGreenHouseGUI()
     delete ui;
 
 }
+
 void SmartGreenHouseGUI::callTemp(){
     //
     SmartGreenHouseGUI::onfanSpeedvalueChanged(speed);
     if(Serial->isWritable()){
         Serial->write("t");
-
         //qDebug() << "temperature call done";
-
     }
 }
+
 void SmartGreenHouseGUI::setFanSpeed(){
     if(Serial->isWritable()){
         Serial->write("f");
@@ -331,8 +331,8 @@ void SmartGreenHouseGUI::on_tempSpin60_valueChanged(int arg1)
 void SmartGreenHouseGUI::on_tempSpin80_valueChanged(int arg1)
 {
     thresholdTemp80 = arg1;
-    if(thresholdHumi60 >= thresholdHumi80 ){
-        thresholdHumi60 = thresholdTemp80-1;
+    if(thresholdTemp60 >= thresholdTemp80 ){
+        thresholdTemp60 = thresholdTemp80-1;
     }
     if(thresholdTemp80 >= thresholdTemp100 ){
         thresholdTemp100 = thresholdTemp80+1;
