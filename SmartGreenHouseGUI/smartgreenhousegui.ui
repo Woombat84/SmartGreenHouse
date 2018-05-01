@@ -14,7 +14,7 @@
    <string>SmartGreenHouseGUI</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>180</x>
@@ -36,37 +36,44 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_4">
          <item>
+          <widget class="QLabel" name="label_15">
+           <property name="text">
+            <string>Fan-speed</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QLabel" name="label_5">
            <property name="text">
-            <string>FanSpeed @ 20%</string>
+            <string>@ 20% </string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_7">
            <property name="text">
-            <string>FanSpeed @ 40%</string>
+            <string> @ 40%</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_6">
            <property name="text">
-            <string>FanSpeed @ 60%</string>
+            <string> @ 60%</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_9">
            <property name="text">
-            <string>FanSpeed @ 80%</string>
+            <string> @ 80%</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QLabel" name="label_8">
            <property name="text">
-            <string>FanSpeed @ 100%</string>
+            <string> @ 100%</string>
            </property>
           </widget>
          </item>
@@ -74,6 +81,13 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="text">
+            <string>Temperature</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QSpinBox" name="tempSpin20">
            <property name="suffix">
@@ -109,13 +123,6 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLabel" name="label_12">
-           <property name="text">
-            <string>Temperature</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
        <item>
@@ -123,6 +130,13 @@
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="text">
+            <string>Humidity</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QSpinBox" name="humiSpin20">
            <property name="suffix">
@@ -161,13 +175,6 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QLabel" name="label_11">
-           <property name="text">
-            <string>Humidity</string>
-           </property>
-          </widget>
-         </item>
         </layout>
        </item>
        <item>
@@ -177,7 +184,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -254,7 +261,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>230</x>
