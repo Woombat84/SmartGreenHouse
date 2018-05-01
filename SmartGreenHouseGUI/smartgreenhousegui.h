@@ -20,8 +20,10 @@ public:
 private slots:
     void setFanSpeed();
     void callTemp();
+    void setLux();
     void updateHumiLCD(const QString);
     void updateTempLCD(const QString);
+    void updatelcdNumber(const QString);
     int  combine(int,int);
     void onfanSpeedvalueChanged(int value);
     void setDisplays();
@@ -47,6 +49,8 @@ private slots:
 
     void on_checkBox_toggled(bool checked);
 
+    void on_lcdNumber_objectNameChanged(const QString &objectName);
+
 private:
     Ui::SmartGreenHouseGUI *ui;
     QSerialPort  *Serial;
@@ -58,6 +62,7 @@ private:
     QString serialBuffer = "";
     int temp=0;
     int humi=0;
+    int lux=0;
     int speed=0;
     int thresholdHumi20=40;
     int thresholdHumi40=50;
@@ -72,6 +77,7 @@ private:
     bool onHumi=false;
     const QString procent ="%";
     const QString degrees ="C";
+    char picker = 'x';
 };
 
 #endif // SMARTGREENHOUSEGUI_H

@@ -20,6 +20,9 @@ void masterdriv::serialAvaivable(){
       while (t == 'f') {
             masterdriv::tEqualsF();
       }
+      while (t=='l'){
+            masterdriv::Light();
+      }
     }
    }
 
@@ -61,6 +64,19 @@ void masterdriv::serialAvaivable(){
             //Serial.println("done");
             }
         }
+
+      void masterdriv::Light(){
+        Wire.requestFrom(L1, 1);
+        while (Wire.available()) {
+          I2C_readAnything(lux);
+        delay(100);
+        Serial.print(lux);
+        Serial.print(",");
+        t = 'm';
+        //Serial.println("done");
+        }
+    }
+   
 
   void masterdriv::setupBegin(){
     Wire.begin();

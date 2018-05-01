@@ -17,6 +17,7 @@ class masterdriv
         void WireAvaivable();
         void tEqualsF();
         void tEqualsT();
+        void Light();
 
 
 
@@ -26,11 +27,14 @@ class masterdriv
 
     const int Fan = 21;
     const int TempHumi = 2;
+    const int L1 = 5;
     int x;
     char t;
     int i;
     uint8_t temp;
     uint8_t humi;
+    uint8_t lux;
+
 };
 
 #endif
