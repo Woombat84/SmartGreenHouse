@@ -18,7 +18,7 @@ class TinyTemp
   protected:
 
   private:
-    uint8_t Id = 2;
+    const uint8_t Id = 2;
     int Temp = 0;
     int Humi = 0;
 

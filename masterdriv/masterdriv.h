@@ -23,7 +23,7 @@ class masterdriv
     protected:
 
     private:
-
+    const int HL = 6;
     const int Fan = 21;
     const int TempHumi = 2;
     int x;
@@ -31,6 +31,7 @@ class masterdriv
     int i;
     uint8_t temp;
     uint8_t humi;
+    uint8_t heat;
 };
 
 #endif
