@@ -1,6 +1,6 @@
 #ifndef TINYTEMP_H te
 #define TINYTEMP_H te
-#include <I2C_Anything.h>
+
 #include <TinyWire.h>
 #include <Arduino.h>
 #include "TinyTemp.h"
@@ -10,10 +10,17 @@ class TinyTemp
 {
   public:
     TinyTemp();
+    void setWire();
+    void setTemp();
+    void request();
+    dht DHT;
+
   protected:
 
   private:
-
+    const uint8_t Id = 2;
+    int Temp = 0;
+    int Humi = 0;
 
 
 };

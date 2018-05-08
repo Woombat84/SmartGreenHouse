@@ -1,17 +1,29 @@
-#ifndef MASTERDRIV_H
-#define MASTERDRIV_H
+
+#ifndef MASTERDRIV_H Ma
+#define MASTERDRIV_H Ma
+
 #include <Wire.h>
-#include <I2C_Anything.h>
+#include "masterdriv.h"
+
+#if (ARDUINO >=100)
+  #include "Arduino.h"
+#else
+  #include"WProgram.h"
+#endif
+
 
 
 class masterdriv
 {
     public:
         masterdriv();
+
+        void setupBegin();
         void serialAvaivable();
         void WireAvaivable();
         void tEqualsF();
-        int tEqualsT();
+        void tEqualsT();
+
 
 
 
@@ -19,13 +31,16 @@ class masterdriv
 
     private:
 
-    uint8_t Fan = 21;
-    uint8_t TempHumi = 2;
-    uint8_t x;
-    uint8_t t;
-    uint8_t i;
+    const int HL = 6;
+    const int Fan = 21;
+    const int TempHumi = 2;
+    int x;
+    char t;
+    int i;
     uint8_t temp;
     uint8_t humi;
+    uint8_t heat;
+
 };
 
 #endif

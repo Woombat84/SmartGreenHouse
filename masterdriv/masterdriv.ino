@@ -3,22 +3,17 @@
 #include <I2C_Anything.h>
 
 
+masterdriv MASTER;
+
+
 void setup() {
-  Wire.begin();
-  Serial.begin(9600);
+  MASTER.setupBegin();
 
 }
 
 void loop() {
 
-  serialAvaivable();
-  tEqualsT();
-  WireAvaivable();
-      }
-    {
-  tEqualsF();
-        }
-        {
-    t = 'm';
+
+  MASTER.serialAvaivable();
   }
 
