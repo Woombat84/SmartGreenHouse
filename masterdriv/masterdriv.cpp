@@ -31,6 +31,17 @@ void masterdriv::serialAvaivable(){
             masterdriv::WireAvaivable();
     }
 
+    void masterdriv::HeatLamp(){
+      Wire.requestFrom(HL, 1)
+      while (Wire.available()){
+      I2C_
+
+      }
+      I2C_readAnything(heat);
+
+
+    }
+
    void masterdriv::WireAvaivable(){
       while (Wire.available()) {
         I2C_readAnything(temp);
