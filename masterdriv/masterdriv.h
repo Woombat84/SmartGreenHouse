@@ -23,6 +23,7 @@ class masterdriv
         void WireAvaivable();
         void tEqualsF();
         void tEqualsT();
+        void Light();
 
 
 
@@ -39,6 +40,7 @@ class masterdriv
     int i;
     uint8_t temp;
     uint8_t humi;
+    uint8_t L1;
     uint8_t heat;
 
 };
