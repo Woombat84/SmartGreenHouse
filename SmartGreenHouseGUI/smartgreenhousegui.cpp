@@ -37,7 +37,7 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
         Serial->setStopBits(QSerialPort::OneStop);
         Serial->setFlowControl(QSerialPort::NoFlowControl);
 
-        //qDebug()<<"serial setup";
+        qDebug()<<"serial setup";
         SmartGreenHouseGUI::setDisplays();
         connect(timer, SIGNAL(timeout()), this, SLOT(callTemp()));
         connect(timer2, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
