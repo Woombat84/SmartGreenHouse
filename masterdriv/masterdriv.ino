@@ -2,7 +2,9 @@
 #include "masterdriv.h"
 #include <I2C_Anything.h>
 
+
 masterdriv MASTER;
+
 
 void setup() {
   MASTER.setupBegin();
@@ -11,5 +13,7 @@ void setup() {
 
 void loop() {
 
+
   MASTER.serialAvaivable();
   }
+

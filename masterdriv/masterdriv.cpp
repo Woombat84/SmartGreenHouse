@@ -20,6 +20,9 @@ void masterdriv::serialAvaivable(){
       while (t == 'f') {
             masterdriv::tEqualsF();
       }
+      while (t=='l'){
+        masterdriv::Light();
+      }
     }
    }
 
@@ -30,6 +33,22 @@ void masterdriv::serialAvaivable(){
         //Serial.println("temperatur");
             masterdriv::WireAvaivable();
     }
+
+    void masterdriv::HeatLamp(){
+
+      delay(3000);
+      if (Serial.available() > -1) {
+        x = Serial.parseInt();
+          Wire.beginTransmission(HL);
+          Wire.write(x);
+          Wire.endTransmission();
+          //Serial.println(x);
+          delay(100);
+          t = 'm';
+          //Serial.println("done");
+
+    }
+
 
    void masterdriv::WireAvaivable(){
       while (Wire.available()) {
@@ -61,6 +80,17 @@ void masterdriv::serialAvaivable(){
             //Serial.println("done");
             }
         }
+
+      void masterdriv::Light(){
+        while (Wire.available()) {
+          Wire.write(L1);
+          //Serial.println("C");
+          delay(100);
+          Wire.write(L1);
+          delay(100);
+          t = 'm';
+      }
+    }
 
   void masterdriv::setupBegin(){
     Wire.begin();
