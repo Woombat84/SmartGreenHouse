@@ -35,6 +35,7 @@ void masterdriv::serialAvaivable(){
     }
 
     void masterdriv::HeatLamp(){
+
       delay(3000);
       if (Serial.available() > -1) {
         x = Serial.parseInt();
@@ -47,6 +48,7 @@ void masterdriv::serialAvaivable(){
           //Serial.println("done");
 
     }
+
 
    void masterdriv::WireAvaivable(){
       while (Wire.available()) {
