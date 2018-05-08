@@ -39,15 +39,15 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
         Serial->setParity(QSerialPort::NoParity);
         Serial->setStopBits(QSerialPort::OneStop);
         Serial->setFlowControl(QSerialPort::NoFlowControl);
-
-        qDebug()<<"serial setup";
+        //qDebug()<<"serial setup";
         SmartGreenHouseGUI::setDisplays();
         connect(timer, SIGNAL(timeout()), this, SLOT(callTemp()));
-        connect(timer2, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
-        connect(timer3, SIGNAL(timeout()), this, SLOT(setLux()));
+        connect(timer, SIGNAL(timeout()), this, SLOT(setLux()));
+        connect(timer3, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
         QObject::connect(Serial, SIGNAL(readyRead()), this, SLOT(serialRead()));
-        timer->start(1000);
+        timer->start(2000);
         timer2->start(1000);
+        timer3->start(4000);
 
     }
     else{
@@ -83,23 +83,19 @@ void SmartGreenHouseGUI::callTemp(){
     SmartGreenHouseGUI::onfanSpeedvalueChanged(speed);
     if(Serial->isWritable()){
         Serial->write("t");
-        picker = 't';
         //qDebug() << "temperature call done";
     }
 }
 void SmartGreenHouseGUI::setLux(){
-    //
     if(Serial->isWritable()){
         Serial->write("l");
-        picker ='l';
-        qDebug() << "lux call done";
+       //qDebug() << "lux call done";
     }
 }
 
 void SmartGreenHouseGUI::setFanSpeed(){
     if(Serial->isWritable()){
         Serial->write("f");
-        picker ='f';
         //qDebug() << "set fan speed";
         if(humi >= thresholdHumi20 &&humi < thresholdHumi40 && onHumi == true){
             if(Serial->isWritable()){
@@ -156,8 +152,7 @@ void SmartGreenHouseGUI::setFanSpeed(){
             Serial->write("255");
             //Serial->clear();
             return;
-        }
-        else{
+        }else{
 
             Serial->write("0");
             speed = 0;
@@ -168,7 +163,6 @@ void SmartGreenHouseGUI::setFanSpeed(){
     else{
         QMessageBox::warning(this, "cannot write to arduino","sad");
     }
-
     return;
 }
 
@@ -178,14 +172,15 @@ void SmartGreenHouseGUI::serialRead(){
     //qDebug()<< "Serial does work!"; //debugging
 
     QStringList bufferSplit = serialBuffer.split(",");
-    if(bufferSplit.length()< 3){
+    //qDebug()<< bufferSplit;
+    if(bufferSplit.length()< 5){
         serialData = Serial->readAll();
         serialBuffer += QString::fromStdString(serialData.toStdString());
     }else{
-        if(picker == 't'){
         //qDebug() << bufferSplit;
         SmartGreenHouseGUI::updateTempLCD(bufferSplit[1]);
         SmartGreenHouseGUI::updateHumiLCD(bufferSplit[2]);
+        SmartGreenHouseGUI::updatelcdNumber(bufferSplit[3]);
         serialBuffer = "";
         int temp0 = bufferSplit[1].at(0).digitValue();
         int temp1 = bufferSplit[1].at(1).digitValue();
@@ -195,20 +190,9 @@ void SmartGreenHouseGUI::serialRead(){
         temp = SmartGreenHouseGUI::combine(temp0,temp1);
         //qDebug() << temp;
         humi = SmartGreenHouseGUI::combine(humi0,humi1);
-        //qDebug() << humi;
-        picker = 'm';
-        }
-     if(picker == 'l'){
-         qDebug()<<"no l recieved";
-        SmartGreenHouseGUI::updatelcdNumber(bufferSplit[1]);
-        serialBuffer = "";
-        int lux0 = bufferSplit[1].at(0).digitValue();
-        int lux1 = bufferSplit[1].at(1).digitValue();
-        qDebug()<<lux0 << lux1;
-        lux = SmartGreenHouseGUI::combine(lux0,lux1);
-        picker = 'm';
-     }
+
     }
+    Serial->clear();
 }
 void SmartGreenHouseGUI::updatelcdNumber(const QString a ){
     ui->lcdNumber->display(a);
@@ -387,7 +371,4 @@ void SmartGreenHouseGUI::on_checkBox_toggled(bool checked)
     onHumi = checked;
 }
 
-void SmartGreenHouseGUI::on_lcdNumber_objectNameChanged(const QString &objectName)
-{
 
-}

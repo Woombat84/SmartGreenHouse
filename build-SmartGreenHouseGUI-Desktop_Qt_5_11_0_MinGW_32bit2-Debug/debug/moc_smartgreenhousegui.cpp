@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'smartgreenhousegui.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.8.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.11.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'smartgreenhousegui.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.8.0. It"
+#error "This file was generated using the moc from 5.11.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -153,7 +153,7 @@ void SmartGreenHouseGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 5: _t->updateTempLCD((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 6: _t->updatelcdNumber((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         case 7: { int _r = _t->combine((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
+            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = std::move(_r); }  break;
         case 8: _t->onfanSpeedvalueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 9: _t->setDisplays(); break;
         case 10: _t->on_humiSpin20_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
@@ -172,9 +172,9 @@ void SmartGreenHouseGUI::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
     }
 }
 
-const QMetaObject SmartGreenHouseGUI::staticMetaObject = {
+QT_INIT_METAOBJECT const QMetaObject SmartGreenHouseGUI::staticMetaObject = {
     { &QMainWindow::staticMetaObject, qt_meta_stringdata_SmartGreenHouseGUI.data,
-      qt_meta_data_SmartGreenHouseGUI,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_SmartGreenHouseGUI,  qt_static_metacall, nullptr, nullptr}
 };
 
 
@@ -185,9 +185,9 @@ const QMetaObject *SmartGreenHouseGUI::metaObject() const
 
 void *SmartGreenHouseGUI::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_SmartGreenHouseGUI.stringdata0))
-        return static_cast<void*>(const_cast< SmartGreenHouseGUI*>(this));
+        return static_cast<void*>(this);
     return QMainWindow::qt_metacast(_clname);
 }
 

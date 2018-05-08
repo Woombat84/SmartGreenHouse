@@ -24,7 +24,7 @@ class masterdriv
         void tEqualsF();
         void tEqualsT();
         void Light();
-
+        void HeatLamp();
 
 
 
@@ -33,15 +33,15 @@ class masterdriv
     private:
 
     const int HL = 6;
-    const int Fan = 21;
+    const uint8_t Fan = 21;
     const int TempHumi = 2;
-    const int L1 = 5;
+    const int L1 = 27;
     int x;
     char t;
     int i;
     uint8_t temp;
     uint8_t humi;
-    uint8_t lux;
+    uint8_t lux =0;
 
 };
 

@@ -62,6 +62,10 @@ void masterdriv::serialAvaivable(){
         Serial.print(",");
         Serial.print(humi);
         Serial.print(",");
+        Serial.print(lux);
+        Serial.print(",");
+    
+        delay(100);
         //Serial.println("moisterise level");
         t = 'm';
         //Serial.println("done");
@@ -69,7 +73,7 @@ void masterdriv::serialAvaivable(){
     }
    void masterdriv::tEqualsF(){
         //Serial.print("Enter speed:");
-        delay(3000);
+        delay(300);
         if (Serial.available() > -1) {
           x = Serial.parseInt();
             Wire.beginTransmission(Fan);
@@ -85,10 +89,11 @@ void masterdriv::serialAvaivable(){
       void masterdriv::Light(){
         Wire.requestFrom(L1, 1);
         while (Wire.available()) {
-          I2C_readAnything(lux);
+        I2C_readAnything(lux);
         delay(100);
-        Serial.print(lux);
-        Serial.print(",");
+//        Serial.print(",");
+//        Serial.print(lux);
+//        Serial.print(",");
         t = 'm';
         //Serial.println("done");
         }

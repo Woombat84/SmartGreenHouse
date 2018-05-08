@@ -49,13 +49,12 @@ private slots:
 
     void on_checkBox_toggled(bool checked);
 
-    void on_lcdNumber_objectNameChanged(const QString &objectName);
 
 private:
     Ui::SmartGreenHouseGUI *ui;
     QSerialPort  *Serial;
-    static const qint16 arduino_mega_vendor_id = 6790; //uno 9025
-    static const qint16 arduino_mega_product_id = 29987;  //uno 67
+    static const qint16 arduino_mega_vendor_id = 9025; //mega6790,uno 9025
+    static const qint16 arduino_mega_product_id = 67; //mega29987,uno 67
     QString arduino_mega_portName ="";
     bool arduinoisavailbel = false;
     QByteArray serialData;
@@ -77,7 +76,7 @@ private:
     bool onHumi=false;
     const QString procent ="%";
     const QString degrees ="C";
-    char picker = 'x';
+     QChar picker = 'x';
 };
 
 #endif // SMARTGREENHOUSEGUI_H
