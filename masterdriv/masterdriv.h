@@ -24,7 +24,7 @@ class masterdriv
     protected:
 
     private:
-
+    const int HL = 6;
     const int Fan = 21;
     const int TempHumi = 2;
     const int L1 = 5;
