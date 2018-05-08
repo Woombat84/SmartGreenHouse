@@ -35,13 +35,13 @@ class masterdriv
     const int HL = 6;
     const int Fan = 21;
     const int TempHumi = 2;
+    const int L1 = 5;
     int x;
     char t;
     int i;
     uint8_t temp;
     uint8_t humi;
-    uint8_t L1;
-    uint8_t heat;
+    uint8_t lux;
 
 };
 
