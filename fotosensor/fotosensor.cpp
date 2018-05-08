@@ -4,33 +4,18 @@
 
 fotosensor::fotosensor()
 {
-  #define pinPwm 4
+
 }
  void fotosensor::Setup(){
     Wire.begin(Id);
-    pinMode(pinPwm, OUTPUT);
-    digitalWrite(Id,LOW);
   }
 
- void fotosensor::LH(){
-    while(millis()<5000){
-      digitalWrite(Id,HIGH);
-      Serial.println (L1);
-       if(L1>100){
-      Wire.beginTransmission(Id);
-      Wire.write ('H');
-      Wire.endTransmission();
-      }
-       else if (L1 < 100) {
-      Wire.beginTransmission(Id);
-      Wire.write ('L');
-      Wire.endTransmission();
-      digitalWrite(Id,LOW);
-     }
-    }
-   }
-int fotosensor::recieve(){
-  Serial.write(L1);
-  delay (100);
-  Serial.write(L1);
+void fotosensor::Recieve(){
+    I2C_writeAnything(sensorValue);
+}
+
+void fotosensor::setLux(){
+    sensorValue = analogRead(A0);
+    sensorValue = map(sensorValue, sensorLow, sensorHigh, 0, 255);
+    delay(100);
 }

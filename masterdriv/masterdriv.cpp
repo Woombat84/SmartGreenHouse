@@ -21,7 +21,7 @@ void masterdriv::serialAvaivable(){
             masterdriv::tEqualsF();
       }
       while (t=='l'){
-        masterdriv::Light();
+            masterdriv::Light();
       }
     }
    }
@@ -48,6 +48,7 @@ void masterdriv::serialAvaivable(){
           //Serial.println("done");
 
     }
+  }
 
 
    void masterdriv::WireAvaivable(){
@@ -82,15 +83,17 @@ void masterdriv::serialAvaivable(){
         }
 
       void masterdriv::Light(){
+        Wire.requestFrom(L1, 1);
         while (Wire.available()) {
-          Wire.write(L1);
-          //Serial.println("C");
-          delay(100);
-          Wire.write(L1);
-          delay(100);
-          t = 'm';
-      }
+          I2C_readAnything(lux);
+        delay(100);
+        Serial.print(lux);
+        Serial.print(",");
+        t = 'm';
+        //Serial.println("done");
+        }
     }
+
 
   void masterdriv::setupBegin(){
     Wire.begin();

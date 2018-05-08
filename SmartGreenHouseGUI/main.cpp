@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     SmartGreenHouseGUI w;
 
-    w.setFixedSize(669,202);
+    w.setFixedSize(756,338);
     w.show();
 
     return a.exec();

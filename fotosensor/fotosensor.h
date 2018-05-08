@@ -8,14 +8,17 @@ class fotosensor
     public:
         fotosensor();
         void Setup();
-        void LH();
-        int recieve();
+        void Recieve();
+        void setLux();
 
     protected:
 
     private:
-      
-      int L1 = analogRead(A0);
+      int sensorValue;
+      int sensorHigh = 1023;
+      int sensorLow = 0;
+      uint8_t Id = 5;
+
 };
 
 #endif // FOTOSENSOR_H

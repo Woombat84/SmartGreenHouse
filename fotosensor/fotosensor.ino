@@ -7,12 +7,12 @@ fotosensor FOTO;
 
 void setup() {
   FOTO.Setup();
-  Wire.requestFrom(Id, 10);
+  Wire.onRequest(Require);
 }
 
 void loop() {
-   FOTO.LH();
+   FOTO.setLux();
   }
-void require(){
-  FOTO.recieve();
+void Require(){
+  FOTO.Recieve();
 }
