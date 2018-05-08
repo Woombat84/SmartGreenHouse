@@ -4,7 +4,7 @@
 
 fotosensor::fotosensor()
 {
- 
+
 }
  void fotosensor::Setup(){
     Wire.begin(Id);
@@ -19,4 +19,3 @@ void fotosensor::setLux(){
     sensorValue = map(sensorValue, sensorLow, sensorHigh, 0, 255);
     delay(100);
 }
-
