@@ -34,21 +34,7 @@ void masterdriv::serialAvaivable(){
             masterdriv::WireAvaivable();
     }
 
-    void masterdriv::HeatLamp(){
 
-      delay(3000);
-      if (Serial.available() > -1) {
-        x = Serial.parseInt();
-          Wire.beginTransmission(HL);
-          Wire.write(x);
-          Wire.endTransmission();
-          //Serial.println(x);
-          delay(100);
-          t = 'm';
-          //Serial.println("done");
-
-    }
-  }
 
 
    void masterdriv::WireAvaivable(){
