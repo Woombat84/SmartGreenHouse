@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'smartgreenhousegui.ui'
 **
-** Created by: Qt User Interface Compiler version 5.8.0
+** Created by: Qt User Interface Compiler version 5.11.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -10,12 +10,9 @@
 #define UI_SMARTGREENHOUSEGUI_H
 
 #include <QtCore/QVariant>
-#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLCDNumber>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -366,34 +363,34 @@ public:
 
     void retranslateUi(QMainWindow *SmartGreenHouseGUI)
     {
-        SmartGreenHouseGUI->setWindowTitle(QApplication::translate("SmartGreenHouseGUI", "SmartGreenHouseGUI", Q_NULLPTR));
-        label_4->setText(QApplication::translate("SmartGreenHouseGUI", "Thresholds settings for fan", Q_NULLPTR));
-        label_15->setText(QApplication::translate("SmartGreenHouseGUI", "Fan-speed", Q_NULLPTR));
-        label_5->setText(QApplication::translate("SmartGreenHouseGUI", "@ 20% ", Q_NULLPTR));
-        label_7->setText(QApplication::translate("SmartGreenHouseGUI", " @ 40%", Q_NULLPTR));
-        label_6->setText(QApplication::translate("SmartGreenHouseGUI", " @ 60%", Q_NULLPTR));
-        label_9->setText(QApplication::translate("SmartGreenHouseGUI", " @ 80%", Q_NULLPTR));
-        label_8->setText(QApplication::translate("SmartGreenHouseGUI", " @ 100%", Q_NULLPTR));
-        label_12->setText(QApplication::translate("SmartGreenHouseGUI", "Temperature", Q_NULLPTR));
-        tempSpin20->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", Q_NULLPTR));
-        tempSpin40->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", Q_NULLPTR));
-        tempSpin60->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", Q_NULLPTR));
-        tempSpin80->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", Q_NULLPTR));
-        tempSpin100->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", Q_NULLPTR));
-        label_11->setText(QApplication::translate("SmartGreenHouseGUI", "Humidity", Q_NULLPTR));
-        humiSpin20->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", Q_NULLPTR));
-        humiSpin40->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", Q_NULLPTR));
-        humiSpin60->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", Q_NULLPTR));
-        humiSpin80->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", Q_NULLPTR));
-        humiSpin100->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", Q_NULLPTR));
-        label_10->setText(QApplication::translate("SmartGreenHouseGUI", "Monitoring of Smart Green House", Q_NULLPTR));
-        label->setText(QApplication::translate("SmartGreenHouseGUI", "Temperature", Q_NULLPTR));
-        label_2->setText(QApplication::translate("SmartGreenHouseGUI", "Humidity", Q_NULLPTR));
-        label_3->setText(QApplication::translate("SmartGreenHouseGUI", "Fan speed", Q_NULLPTR));
-        label_18->setText(QApplication::translate("SmartGreenHouseGUI", "Lux", Q_NULLPTR));
-        label_13->setText(QApplication::translate("SmartGreenHouseGUI", "Check box if humidity as threshold", Q_NULLPTR));
-        checkBox->setText(QApplication::translate("SmartGreenHouseGUI", "CheckBox", Q_NULLPTR));
-        label_14->setText(QApplication::translate("SmartGreenHouseGUI", "*default temperatue as thredshold", Q_NULLPTR));
+        SmartGreenHouseGUI->setWindowTitle(QApplication::translate("SmartGreenHouseGUI", "SmartGreenHouseGUI", nullptr));
+        label_4->setText(QApplication::translate("SmartGreenHouseGUI", "Thresholds settings for fan", nullptr));
+        label_15->setText(QApplication::translate("SmartGreenHouseGUI", "Fan-speed", nullptr));
+        label_5->setText(QApplication::translate("SmartGreenHouseGUI", "@ 20% ", nullptr));
+        label_7->setText(QApplication::translate("SmartGreenHouseGUI", " @ 40%", nullptr));
+        label_6->setText(QApplication::translate("SmartGreenHouseGUI", " @ 60%", nullptr));
+        label_9->setText(QApplication::translate("SmartGreenHouseGUI", " @ 80%", nullptr));
+        label_8->setText(QApplication::translate("SmartGreenHouseGUI", " @ 100%", nullptr));
+        label_12->setText(QApplication::translate("SmartGreenHouseGUI", "Temperature", nullptr));
+        tempSpin20->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", nullptr));
+        tempSpin40->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", nullptr));
+        tempSpin60->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", nullptr));
+        tempSpin80->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", nullptr));
+        tempSpin100->setSuffix(QApplication::translate("SmartGreenHouseGUI", "C", nullptr));
+        label_11->setText(QApplication::translate("SmartGreenHouseGUI", "Humidity", nullptr));
+        humiSpin20->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", nullptr));
+        humiSpin40->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", nullptr));
+        humiSpin60->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", nullptr));
+        humiSpin80->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", nullptr));
+        humiSpin100->setSuffix(QApplication::translate("SmartGreenHouseGUI", "%", nullptr));
+        label_10->setText(QApplication::translate("SmartGreenHouseGUI", "Monitoring of Smart Green House", nullptr));
+        label->setText(QApplication::translate("SmartGreenHouseGUI", "Temperature", nullptr));
+        label_2->setText(QApplication::translate("SmartGreenHouseGUI", "Humidity", nullptr));
+        label_3->setText(QApplication::translate("SmartGreenHouseGUI", "Fan speed", nullptr));
+        label_18->setText(QApplication::translate("SmartGreenHouseGUI", "Lux", nullptr));
+        label_13->setText(QApplication::translate("SmartGreenHouseGUI", "Check box if humidity as threshold", nullptr));
+        checkBox->setText(QApplication::translate("SmartGreenHouseGUI", "CheckBox", nullptr));
+        label_14->setText(QApplication::translate("SmartGreenHouseGUI", "*default temperatue as thredshold", nullptr));
     } // retranslateUi
 
 };

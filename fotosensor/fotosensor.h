@@ -18,7 +18,7 @@ class fotosensor
       int sensorValue;
       int sensorHigh = 1023;
       int sensorLow = 0;
-      uint8_t Id = 5;
+      uint8_t Id = 27;
 
 };
 

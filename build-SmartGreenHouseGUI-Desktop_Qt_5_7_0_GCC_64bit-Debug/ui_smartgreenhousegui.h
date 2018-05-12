@@ -62,20 +62,19 @@ public:
     QHBoxLayout *horizontalLayout_8;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_3;
-    QLabel *label_10;
-    QHBoxLayout *horizontalLayout_10;
     QVBoxLayout *verticalLayout;
+    QLabel *label_10;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLCDNumber *tempLcdNumber;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_2;
     QLCDNumber *humiLcdNumber_2;
-    QHBoxLayout *horizontalLayout_3;
+    QHBoxLayout *horizontalLayout_11;
     QLabel *label_3;
     QProgressBar *fanSpeed;
-    QHBoxLayout *horizontalLayout_12;
-    QLabel *label_16;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_18;
     QLCDNumber *lcdNumber;
     QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_9;
@@ -90,12 +89,12 @@ public:
     {
         if (SmartGreenHouseGUI->objectName().isEmpty())
             SmartGreenHouseGUI->setObjectName(QStringLiteral("SmartGreenHouseGUI"));
-        SmartGreenHouseGUI->resize(756, 338);
+        SmartGreenHouseGUI->resize(756, 267);
         centralWidget = new QWidget(SmartGreenHouseGUI);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         layoutWidget = new QWidget(centralWidget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(210, -3, 521, 121));
+        layoutWidget->setGeometry(QRect(230, 10, 521, 111));
         verticalLayout_4 = new QVBoxLayout(layoutWidget);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
@@ -235,26 +234,20 @@ public:
 
         layoutWidget1 = new QWidget(centralWidget);
         layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(0, 3, 211, 221));
+        layoutWidget1->setGeometry(QRect(0, 10, 221, 181));
         verticalLayout_3 = new QVBoxLayout(layoutWidget1);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_10 = new QLabel(layoutWidget1);
-        label_10->setObjectName(QStringLiteral("label_10"));
-
-        verticalLayout_3->addWidget(label_10);
-
-        horizontalLayout_10 = new QHBoxLayout();
-        horizontalLayout_10->setSpacing(6);
-        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-
-        verticalLayout_3->addLayout(horizontalLayout_10);
-
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        label_10 = new QLabel(layoutWidget1);
+        label_10->setObjectName(QStringLiteral("label_10"));
+
+        verticalLayout->addWidget(label_10);
+
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
@@ -289,45 +282,51 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
-        horizontalLayout_3 = new QHBoxLayout();
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_11 = new QHBoxLayout();
+        horizontalLayout_11->setSpacing(6);
+        horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
         label_3 = new QLabel(layoutWidget1);
         label_3->setObjectName(QStringLiteral("label_3"));
 
-        horizontalLayout_3->addWidget(label_3);
+        horizontalLayout_11->addWidget(label_3);
 
         fanSpeed = new QProgressBar(layoutWidget1);
         fanSpeed->setObjectName(QStringLiteral("fanSpeed"));
         fanSpeed->setValue(24);
 
-        horizontalLayout_3->addWidget(fanSpeed);
+        horizontalLayout_11->addWidget(fanSpeed);
 
 
-        verticalLayout->addLayout(horizontalLayout_3);
+        verticalLayout->addLayout(horizontalLayout_11);
+
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(6);
+        horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
+        label_18 = new QLabel(layoutWidget1);
+        label_18->setObjectName(QStringLiteral("label_18"));
+
+        horizontalLayout_10->addWidget(label_18);
+
+        lcdNumber = new QLCDNumber(layoutWidget1);
+        lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
+        lcdNumber->setEnabled(false);
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Minimum);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lcdNumber->sizePolicy().hasHeightForWidth());
+        lcdNumber->setSizePolicy(sizePolicy);
+
+        horizontalLayout_10->addWidget(lcdNumber);
+
+
+        verticalLayout->addLayout(horizontalLayout_10);
 
 
         verticalLayout_3->addLayout(verticalLayout);
 
-        horizontalLayout_12 = new QHBoxLayout();
-        horizontalLayout_12->setSpacing(6);
-        horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
-        label_16 = new QLabel(layoutWidget1);
-        label_16->setObjectName(QStringLiteral("label_16"));
-
-        horizontalLayout_12->addWidget(label_16);
-
-        lcdNumber = new QLCDNumber(layoutWidget1);
-        lcdNumber->setObjectName(QStringLiteral("lcdNumber"));
-
-        horizontalLayout_12->addWidget(lcdNumber);
-
-
-        verticalLayout_3->addLayout(horizontalLayout_12);
-
         layoutWidget2 = new QWidget(centralWidget);
         layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(230, 120, 517, 22));
+        layoutWidget2->setGeometry(QRect(250, 123, 517, 22));
         horizontalLayout_9 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_9->setSpacing(6);
         horizontalLayout_9->setContentsMargins(11, 11, 11, 11);
@@ -351,7 +350,7 @@ public:
         SmartGreenHouseGUI->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(SmartGreenHouseGUI);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 756, 19));
+        menuBar->setGeometry(QRect(0, 0, 756, 21));
         SmartGreenHouseGUI->setMenuBar(menuBar);
         mainToolBar = new QToolBar(SmartGreenHouseGUI);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -391,7 +390,7 @@ public:
         label->setText(QApplication::translate("SmartGreenHouseGUI", "Temperature", 0));
         label_2->setText(QApplication::translate("SmartGreenHouseGUI", "Humidity", 0));
         label_3->setText(QApplication::translate("SmartGreenHouseGUI", "Fan speed", 0));
-        label_16->setText(QApplication::translate("SmartGreenHouseGUI", "Lux-Level", 0));
+        label_18->setText(QApplication::translate("SmartGreenHouseGUI", "Lux", 0));
         label_13->setText(QApplication::translate("SmartGreenHouseGUI", "Check box if humidity as threshold", 0));
         checkBox->setText(QApplication::translate("SmartGreenHouseGUI", "CheckBox", 0));
         label_14->setText(QApplication::translate("SmartGreenHouseGUI", "*default temperatue as thredshold", 0));
