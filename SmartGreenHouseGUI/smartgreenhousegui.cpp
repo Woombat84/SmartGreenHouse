@@ -45,7 +45,7 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
         connect(timer, SIGNAL(timeout()), this, SLOT(setLux()));
         connect(timer3, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
         QObject::connect(Serial, SIGNAL(readyRead()), this, SLOT(serialRead()));
-        timer->start(2000);
+        timer->start(1000);
         timer2->start(1000);
         timer3->start(4000);
 
@@ -192,7 +192,7 @@ void SmartGreenHouseGUI::serialRead(){
         humi = SmartGreenHouseGUI::combine(humi0,humi1);
 
     }
-    Serial->clear();
+
 }
 void SmartGreenHouseGUI::updatelcdNumber(const QString a ){
     ui->lcdNumber->display(a);
