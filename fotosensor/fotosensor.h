@@ -3,6 +3,11 @@
 #define FOTOSENSOR_H fs
 #include <Arduino.h>
 
+#if (ARDUINO >=100)
+  #include "Arduino.h"
+#else
+  #include"WProgram.h"
+#endif
 
 class fotosensor
 {
@@ -11,13 +16,16 @@ class fotosensor
         void Setup();
         void Recieve();
         void setLux();
+      
 
     protected:
 
     private:
-      int sensorValue;
-      int sensorHigh = 1023;
-      int sensorLow = 0;
+      int photoRPin = 0; 
+      int minLight;          //Used to calibrate the readings
+      int maxLight;          //Used to calibrate the readings
+      int lightLevel;
+      int adjustedLightLevel;
       uint8_t Id = 27;
 
 };

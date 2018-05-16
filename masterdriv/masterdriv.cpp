@@ -73,12 +73,12 @@ void masterdriv::serialAvaivable(){
         }
 
       void masterdriv::Light(){
-        Wire.requestFrom(L1, 2);
+        Wire.requestFrom(L1, 1);
         while (Wire.available()) {
         I2C_readAnything(lux);
         delay(100);
         Serial.print(lux);
-//        Serial.print(",");
+        Serial.print(",");
         t = 'm';
         //Serial.println("done");
         }
