@@ -21,11 +21,11 @@ class fotosensor
     protected:
 
     private:
-      int photoRPin = 0; 
-      int minLight;          //Used to calibrate the readings
-      int maxLight;          //Used to calibrate the readings
+      int Apin = 0; 
+      int minLight;          
+      int maxLight;          
       int lightLevel;
-      int adjustedLightLevel;
+      int lux;
       uint8_t Id = 27;
 
 };

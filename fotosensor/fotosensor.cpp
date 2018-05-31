@@ -8,8 +8,8 @@ fotosensor::fotosensor()
  void fotosensor::Setup(){
   Serial.begin(9600);
     Wire.begin(Id);
-     //Setup the starting light level limits
-    lightLevel=analogRead(photoRPin);
+     //thestarting light level limits
+    lightLevel=analogRead(Apin);
     minLight=lightLevel-20;
     maxLight=lightLevel;
   }
@@ -17,8 +17,8 @@ fotosensor::fotosensor()
 
 void fotosensor::setLux(){
     
- //auto-adjust the minimum and maximum limits in real time
- lightLevel=analogRead(photoRPin);
+//adjust min and max
+ lightLevel=analogRead(Apin);
  if(minLight>lightLevel){
  minLight=lightLevel;
  }
@@ -27,16 +27,15 @@ void fotosensor::setLux(){
  }
  
  //Adjust the light level to produce a result between 0 and 100.
- adjustedLightLevel = map(lightLevel, minLight, maxLight, 100, 0); 
+ lux = map(lightLevel, minLight, maxLight, 100, 0); 
  
- //Send the adjusted Light level result to Serial port (processing)
- Serial.println(adjustedLightLevel);
+ //testing for transmission.
+ Serial.println(lux);
  
- //slow down the transmission for effective Serial communication.
  delay(500);
   }
 
   void fotosensor::Recieve(){
-    I2C_writeAnything(adjustedLightLevel);
+    I2C_writeAnything(lux);
 }
 
