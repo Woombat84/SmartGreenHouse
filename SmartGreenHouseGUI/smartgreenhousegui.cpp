@@ -426,8 +426,8 @@ void SmartGreenHouseGUI::on_checkBox_toggled(bool checked)
 void SmartGreenHouseGUI::on_luxSpin20_valueChanged(int arg1)
 {
     thresholdLux20 = arg1;
-    if(thresholdLux20 >= thresholdLux40 ){
-        thresholdLux40 = thresholdLux20+1;
+    if(thresholdLux20 <= thresholdLux40 ){
+        thresholdLux40 = thresholdLux20-1;
     }
     else {
         }
@@ -437,11 +437,11 @@ void SmartGreenHouseGUI::on_luxSpin20_valueChanged(int arg1)
 void SmartGreenHouseGUI::on_luxSpin40_valueChanged(int arg1)
 {
     thresholdLux40 = arg1;
-    if(thresholdLux20 >= thresholdLux40 ){
-        thresholdLux20 = thresholdLux40-1;
+    if(thresholdLux20 <= thresholdLux40 ){
+        thresholdLux20 = thresholdLux40+1;
     }
-    if(thresholdLux40 >= thresholdLux60 ){
-        thresholdLux60 = thresholdLux40+1;
+    if(thresholdLux40 <= thresholdLux60 ){
+        thresholdLux60 = thresholdLux40-1;
     }
     else {
         }
@@ -451,11 +451,11 @@ void SmartGreenHouseGUI::on_luxSpin40_valueChanged(int arg1)
 void SmartGreenHouseGUI::on_luxSpin60_valueChanged(int arg1)
 {
     thresholdLux60 = arg1;
-    if(thresholdLux40 >= thresholdLux60 ){
-        thresholdLux40 = thresholdLux60-1;
+    if(thresholdLux40 <= thresholdLux60 ){
+        thresholdLux40 = thresholdLux60+1;
     }
-    if(thresholdLux60 >= thresholdLux80 ){
-        thresholdLux80 = thresholdLux60+1;
+    if(thresholdLux60 <= thresholdLux80 ){
+        thresholdLux80 = thresholdLux60-1;
     }
     else {
         }
@@ -465,11 +465,11 @@ void SmartGreenHouseGUI::on_luxSpin60_valueChanged(int arg1)
 void SmartGreenHouseGUI::on_luxSpin80_valueChanged(int arg1)
 {
     thresholdLux80 = arg1;
-    if(thresholdLux60 >= thresholdLux80 ){
-        thresholdLux60 = thresholdLux80-1;
+    if(thresholdLux60 <= thresholdLux80 ){
+        thresholdLux60 = thresholdLux80+1;
     }
-    if(thresholdLux80 >= thresholdLux100 ){
-        thresholdLux100 = thresholdLux80+1;
+    if(thresholdLux80 <= thresholdLux100 ){
+        thresholdLux100 = thresholdLux80-1;
     }
     else {
         }
@@ -479,8 +479,8 @@ void SmartGreenHouseGUI::on_luxSpin80_valueChanged(int arg1)
 void SmartGreenHouseGUI::on_luxSpin100_valueChanged(int arg1)
 {
     thresholdLux100 = arg1;
-    if(thresholdLux80 >= thresholdLux100 ){
-        thresholdLux80 = thresholdLux100-1;
+    if(thresholdLux80 < thresholdLux100 ){
+        thresholdLux80 = thresholdLux100+1;
     }
     else {
         }
