@@ -19,6 +19,7 @@ public:
     ~SmartGreenHouseGUI();
 private slots:
     void setFanSpeed();
+    void setHeatLamp();
     void callTemp();
     void setLux();
     void updateHumiLCD(const QString);
@@ -50,6 +51,18 @@ private slots:
     void on_checkBox_toggled(bool checked);
 
 
+    void on_luxSpin20_valueChanged(int arg1);
+
+    void on_luxSpin40_valueChanged(int arg1);
+
+    void on_luxSpin60_valueChanged(int arg1);
+
+    void on_luxSpin80_valueChanged(int arg1);
+
+    void on_luxSpin100_valueChanged(int arg1);
+
+    void on_heatLampProgress_valueChanged(int value);
+
 private:
     Ui::SmartGreenHouseGUI *ui;
     QSerialPort  *Serial;
@@ -63,6 +76,7 @@ private:
     int humi=0;
     int lux=0;
     int speed=0;
+    int heat=0;
     int thresholdHumi20=40;
     int thresholdHumi40=50;
     int thresholdHumi60=70;
@@ -73,6 +87,11 @@ private:
     int thresholdTemp60=24;
     int thresholdTemp80=26;
     int thresholdTemp100=28;
+    int thresholdLux20= 80;
+    int thresholdLux40= 60;
+    int thresholdLux60= 40;
+    int thresholdLux80= 20;
+    int thresholdLux100= 10;
     bool onHumi=false;
     const QString procent ="%";
     const QString degrees ="C";

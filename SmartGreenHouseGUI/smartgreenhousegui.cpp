@@ -44,6 +44,7 @@ SmartGreenHouseGUI::SmartGreenHouseGUI(QWidget *parent) :
         connect(timer, SIGNAL(timeout()), this, SLOT(callTemp()));
         connect(timer, SIGNAL(timeout()), this, SLOT(setLux()));
         connect(timer3, SIGNAL(timeout()), this, SLOT(setFanSpeed()));
+        connect(timer2, SIGNAL(timeout()), this, SLOT(setHeatLamp()));
         QObject::connect(Serial, SIGNAL(readyRead()), this, SLOT(serialRead()));
         timer->start(1000);
         timer2->start(1000);
@@ -87,6 +88,7 @@ void SmartGreenHouseGUI::callTemp(){
     }
 }
 void SmartGreenHouseGUI::setLux(){
+    SmartGreenHouseGUI::on_heatLampProgress_valueChanged(heat);
     if(Serial->isWritable()){
         Serial->write("l");
        //qDebug() << "lux call done";
@@ -166,7 +168,48 @@ void SmartGreenHouseGUI::setFanSpeed(){
     return;
 }
 
+void SmartGreenHouseGUI::setHeatLamp(){
+    if(Serial->isWritable()){
+        Serial->write("h");
+        //qDebug() << "set heat lamp";
+        if(lux >= thresholdLux20 &&lux < thresholdLux40){
+            Serial->write("255");
+            heat = 100;
+            return;
+        }
+        if(lux >= thresholdLux40 &&lux <thresholdLux60){
+            Serial->write("200");
+            heat = 80;
+            return;
+        }
+        if(lux >= thresholdLux60 &&lux <thresholdLux80){
+            Serial->write("112");
+            heat = 60;
+            return;
+        }
+        if(lux >= thresholdLux80 &&lux< thresholdLux100){
+            Serial->write("77");
+            heat = 40;
+            return;
+        }
+        if(lux >= thresholdLux100){
+            Serial->write("52");
+            heat = 20;
+            return;
+        }else{
 
+            Serial->write("0");
+            heat = 0;
+            //Serial->clear();
+            return;
+        }
+
+    }
+    else{
+        QMessageBox::warning(this, "cannot write to arduino","sad");
+    }
+    return;
+}
 void SmartGreenHouseGUI::serialRead(){
 
     //qDebug()<< "Serial does work!"; //debugging
@@ -186,11 +229,14 @@ void SmartGreenHouseGUI::serialRead(){
         int temp1 = bufferSplit[1].at(1).digitValue();
         int humi0 = bufferSplit[2].at(0).digitValue();
         int humi1 = bufferSplit[2].at(1).digitValue();
+        int lux0 =  bufferSplit[3].at(0).digitValue();
+        int lux1 =  bufferSplit[3].at(1).digitValue();
         //qDebug() << temp0 <<temp1;
         temp = SmartGreenHouseGUI::combine(temp0,temp1);
         //qDebug() << temp;
         humi = SmartGreenHouseGUI::combine(humi0,humi1);
-
+        lux = SmartGreenHouseGUI::combine(lux0,lux1);
+        //qDebug()<< lux;
     }
 
 }
@@ -233,7 +279,11 @@ void SmartGreenHouseGUI::setDisplays(){
     ui->tempSpin60->setValue(thresholdTemp60);
     ui->tempSpin80->setValue(thresholdTemp80);
     ui->tempSpin100->setValue(thresholdTemp100);
-
+    ui->luxSpin20->setValue(thresholdLux20);
+    ui->luxSpin40->setValue(thresholdLux40);
+    ui->luxSpin60->setValue(thresholdLux60);
+    ui->luxSpin80->setValue(thresholdLux80);
+    ui->luxSpin100->setValue(thresholdLux100);
 }
 
 void SmartGreenHouseGUI::on_humiSpin20_valueChanged(int arg1)
@@ -372,3 +422,75 @@ void SmartGreenHouseGUI::on_checkBox_toggled(bool checked)
 }
 
 
+
+void SmartGreenHouseGUI::on_luxSpin20_valueChanged(int arg1)
+{
+    thresholdLux20 = arg1;
+    if(thresholdLux20 >= thresholdLux40 ){
+        thresholdLux40 = thresholdLux20+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+}
+
+void SmartGreenHouseGUI::on_luxSpin40_valueChanged(int arg1)
+{
+    thresholdLux40 = arg1;
+    if(thresholdLux20 >= thresholdLux40 ){
+        thresholdLux20 = thresholdLux40-1;
+    }
+    if(thresholdLux40 >= thresholdLux60 ){
+        thresholdLux60 = thresholdLux40+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+}
+
+void SmartGreenHouseGUI::on_luxSpin60_valueChanged(int arg1)
+{
+    thresholdLux60 = arg1;
+    if(thresholdLux40 >= thresholdLux60 ){
+        thresholdLux40 = thresholdLux60-1;
+    }
+    if(thresholdLux60 >= thresholdLux80 ){
+        thresholdLux80 = thresholdLux60+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+}
+
+void SmartGreenHouseGUI::on_luxSpin80_valueChanged(int arg1)
+{
+    thresholdLux80 = arg1;
+    if(thresholdLux60 >= thresholdLux80 ){
+        thresholdLux60 = thresholdLux80-1;
+    }
+    if(thresholdLux80 >= thresholdLux100 ){
+        thresholdLux100 = thresholdLux80+1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+}
+
+void SmartGreenHouseGUI::on_luxSpin100_valueChanged(int arg1)
+{
+    thresholdLux100 = arg1;
+    if(thresholdLux80 >= thresholdLux100 ){
+        thresholdLux80 = thresholdLux100-1;
+    }
+    else {
+        }
+    SmartGreenHouseGUI::setDisplays();
+}
+
+
+
+void SmartGreenHouseGUI::on_heatLampProgress_valueChanged(int value)
+{
+    ui->heatLampProgress->setValue(value);
+    return;
+}

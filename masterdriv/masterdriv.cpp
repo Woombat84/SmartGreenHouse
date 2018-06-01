@@ -23,6 +23,9 @@ void masterdriv::serialAvaivable(){
       while (t=='l'){
             masterdriv::Light();
       }
+      while (t=='h'){
+            masterdriv::HeatLamp();
+      }
     }
    }
 
@@ -35,8 +38,7 @@ void masterdriv::serialAvaivable(){
     }
 
     void masterdriv::HeatLamp(){
-
-      delay(3000);
+      delay(300);
       if (Serial.available() > -1) {
         x = Serial.parseInt();
           Wire.beginTransmission(HL);
@@ -64,7 +66,6 @@ void masterdriv::serialAvaivable(){
         Serial.print(",");
         Serial.print(lux);
         Serial.print(",");
-    
         delay(100);
         //Serial.println("moisterise level");
         t = 'm';
