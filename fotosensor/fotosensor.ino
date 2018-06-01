@@ -2,6 +2,7 @@
 #include "fotosensor.h"
 #include <I2C_Anything.h>
 
+
 fotosensor FOTO;
 
 

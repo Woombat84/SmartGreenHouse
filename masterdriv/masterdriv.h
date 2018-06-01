@@ -41,7 +41,7 @@ class masterdriv
     int i;
     uint8_t temp;
     uint8_t humi;
-    uint8_t lux =0;
+    uint8_t lux;
 
 };
 
