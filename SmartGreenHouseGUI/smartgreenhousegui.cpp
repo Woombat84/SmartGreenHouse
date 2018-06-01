@@ -229,24 +229,14 @@ void SmartGreenHouseGUI::serialRead(){
         int temp1 = bufferSplit[1].at(1).digitValue();
         int humi0 = bufferSplit[2].at(0).digitValue();
         int humi1 = bufferSplit[2].at(1).digitValue();
-<<<<<<< HEAD
         int lux0 =  bufferSplit[3].at(0).digitValue();
         int lux1 =  bufferSplit[3].at(1).digitValue();
-=======
-        int lux0 = bufferSplit[2].at(0).digitValue();
-        int lux1 = bufferSplit[2].at(1).digitValue();
->>>>>>> 8744912edd5bd82a844a03bb86633b2a375874b7
         //qDebug() << temp0 <<temp1;
         temp = SmartGreenHouseGUI::combine(temp0,temp1);
         //qDebug() << temp;
         humi = SmartGreenHouseGUI::combine(humi0,humi1);
-<<<<<<< HEAD
         lux = SmartGreenHouseGUI::combine(lux0,lux1);
         //qDebug()<< lux;
-=======
-        //qDebug() << temp;
-        lux = SmartGreenHouseGUI::combine(lux0,lux1);
->>>>>>> 8744912edd5bd82a844a03bb86633b2a375874b7
     }
 
 }

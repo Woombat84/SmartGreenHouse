@@ -37,7 +37,6 @@ void masterdriv::serialAvaivable(){
             masterdriv::WireAvaivable();
     }
 
-<<<<<<< HEAD
     void masterdriv::HeatLamp(){
       delay(300);
       if (Serial.available() > -1) {
@@ -52,9 +51,6 @@ void masterdriv::serialAvaivable(){
 
     }
   }
-=======
-
->>>>>>> 8744912edd5bd82a844a03bb86633b2a375874b7
 
 
    void masterdriv::WireAvaivable(){
