@@ -255,8 +255,8 @@ void SmartGreenHouseGUI::updateHumiLCD(const QString a )
 }
 
 int SmartGreenHouseGUI::combine(int a, int b)
-{
-    int times =1;
+{ template <typename T>
+    T times =1;
     while(times <=b)
         times *=10;
     return a*times+b;
